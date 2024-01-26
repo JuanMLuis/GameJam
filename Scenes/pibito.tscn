@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbmn61xxu1sq5"]
 
-[ext_resource type="Texture2D" uid="uid://i4k4wgpe5jq4" path="res://slime_body.png" id="1_hyefg"]
-[ext_resource type="Script" path="res://Scenes/pibito.gd" id="1_x6g4f"]
+[ext_resource type="Script" path="res://Scrips/pibito.gd" id="1_ap3hn"]
+[ext_resource type="Texture2D" uid="uid://i4k4wgpe5jq4" path="res://Sprites/slime_body.png" id="2_3twjd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8axhb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hyefg")
+"texture": ExtResource("2_3twjd")
 }],
 "loop": true,
 "name": &"idle",
@@ -18,8 +18,8 @@ animations = [{
 radius = 27.0
 height = 54.0
 
-[node name="Pibito" type="CharacterBody2D"]
-script = ExtResource("1_x6g4f")
+[node name="Pibito" type="CharacterBody2D" groups=["children"]]
+script = ExtResource("1_ap3hn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.8147e-06, -4)
