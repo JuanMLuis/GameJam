@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://4hg7xf2kanx7"]
+
+[ext_resource type="Script" path="res://Scrips/Player.gd" id="1_nnpt4"]
+[ext_resource type="Texture2D" uid="uid://b6xy3rhl8i3jy" path="res://Sprites/icon.svg" id="2_y4ct6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qar"]
+size = Vector2(31, 47)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dn38"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_nnpt4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_l5qar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.250001, -3)
+scale = Vector2(0.253906, 0.40625)
+texture = ExtResource("2_y4ct6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Child_Colector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Child_Colector"]
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_8dn38")
+
+[connection signal="body_entered" from="Child_Colector" to="." method="_on_child_colector_body_entered"]
