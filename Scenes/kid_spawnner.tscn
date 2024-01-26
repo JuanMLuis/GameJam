@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://gg17sin70m6c"]
+
+[ext_resource type="Script" path="res://KidSpawnner.gd" id="1_qv5yn"]
+
+[sub_resource type="Curve2D" id="Curve2D_pasix"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3, -1, 0, 0, 0, 0, 1152, -3, 0, 0, 0, 0, 1155, 646, 0, 0, 0, 0, -2, 645, 0, 0, 0, 0, -3, -1)
+}
+point_count = 5
+
+[node name="KidSpawnner" type="Node2D"]
+script = ExtResource("1_qv5yn")
+
+[node name="OutsideSpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_pasix")
+
+[node name="SpawnLocation" type="PathFollow2D" parent="OutsideSpawnPath"]
+position = Vector2(-3, -1)
+rotation = -0.0017316
