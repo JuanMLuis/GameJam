@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv5yvt7c7r55y"]
+
+[ext_resource type="Script" path="res://Scrips/Menu.gd" id="1_ye3qd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ye3qd")
+
+[node name="Button_Start" type="Button" parent="."]
+offset_left = 444.0
+offset_top = 193.0
+offset_right = 500.0
+offset_bottom = 224.0
+text = "START"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(472, 206)
+
+[connection signal="pressed" from="Button_Start" to="." method="_on_button_start_pressed"]
